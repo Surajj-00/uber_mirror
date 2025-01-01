@@ -1,0 +1,7 @@
+
+# project main things used in !
+
+jwt - json web tokens (authenication)
+socket - live track (location of driver & user)
+bcrypt for hashing password & comparing
+express validator - to check the data is valid 
