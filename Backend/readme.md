@@ -109,3 +109,54 @@ Logout the current user and blacklist the token provided in cookie or headers.
 ### Authentication
 
 Requires a valid JWT token in the Authorization header or cookie.
+
+
+
+## `/captains/register` Endpoint
+
+
+### Description
+This endpoint allows the registration of a new captain by creating captain account with the provided information.
+
+### HTTP Method
+
+`POST`
+
+
+#### Request Body
+
+- `fullname` (object)
+  - `firstname` (string): The first name of the captain.
+  - `lastname` (string): The last name of the captain.
+- `email` (string): The email address of the captain.
+- `password` (string): The password for the captain's account.
+- `vehicle` (object)
+  - `color` (string): The color of the captain's vehicle.
+  - `plate` (string): The license plate of the captain's vehicle.
+  - `capacity` (number): The seating capacity of the vehicle.
+  - `vehicleType` (string): The type of the vehicle.
+        
+
+
+### Example Response
+
+Upon successful registration, the response is in JSON format and includes the following fields:
+
+- `token` (string): JWT Token  The authentication token for the captain's session.
+- `captain` (object)
+  - `fullname` (object)
+    - `firstname` (string): The first name of the captain.
+    - `lastname` (string): The last name of the captain.
+
+  - `email` (string): The email address of the captain.
+  - `password` (string): The password for the captain's account.
+  - `status` (string): The status of the captain's account, active or inactive.
+  
+  - `vehicle` (object)
+    - `color` (string): The color of the captain's vehicle.
+    - `plate` (string): The license plate of the captain's vehicle.
+    - `capacity` (number): The seating capacity of the vehicle.
+    - `vehicleType` (string): The type of the vehicle.
+    
+  - `_id` (string): The unique identifier for the captain.
+  - `__v` (number): The version of the captain's data.

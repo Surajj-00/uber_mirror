@@ -6,6 +6,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const connectToDb = require('./db/db');
 const userRoutes = require('./routes/user.routes');
+const captainRoutes = require('./routes/captain.routes')
 
 connectToDb();
 
@@ -17,10 +18,11 @@ app.use(cookieParser())
 
 
 app.get('/', (req, res) => {
-  res.send('Your Backend is Succesfully Setup🎉🎉')
+  res.send('Your Backend is Successfully Setup🎉🎉')
 })
 
 app.use('/users', userRoutes);
+app.use('/captains', captainRoutes);
 
 
 module.exports = app;
